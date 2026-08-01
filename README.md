@@ -54,3 +54,31 @@ Also: MCP Registry, Cisco Umbrella, Majestic Million, `mcp.` DNS census, RFC 972
 
 ## License
 Research dataset. Re-probe before relying on a row.
+
+
+---
+
+# Round 2 census (2026-08-01 continued)
+
+Additional non-Tranco discovery excluding all 9054 roots already in `finaloauth.txt`.
+
+| Metric | Count |
+| --- | ---: |
+| New verified MCP hosts | **304** |
+| Product (non-docs) | **261** |
+| Docs MCP wrappers | **43** |
+| Open | **214** |
+| OAuth hosts | **78** |
+| **New OAuth roots** | **73** |
+| finaloauth.txt | 9054 → **9127** |
+
+## Round 2 files
+| Path | Description |
+| --- | --- |
+| `data/round2/` | Full round-2 package |
+| `data/oauth_roots_NEW_round2.txt` | 73 new OAuth roots |
+| `data/remote_mcp_servers_round2.csv` | All new verified hosts |
+| `data/remote_mcp_oauth_round2.csv` | OAuth subset |
+| `finaloauth.txt` | Updated cumulative OAuth root list |
+
+Methodology unchanged: SERP mass dorks (V4 search), MCP registry, catalogs, `mcp.` DNS spray, apex `/mcp` spray, RFC 9728 PRM spray, live initialize + OAuth probe. No Tranco.
