@@ -1,74 +1,56 @@
-# Remote MCP servers — non-Tranco discovery pass
+# Remote MCP servers — non-Tranco + mass SERP census
 
-Live-verified **new** remote Model Context Protocol servers found with the **same methodology** as
-[`remote-mcp-oauth-census`](https://github.com/nikhilkaushik12345/remote-mcp-oauth-census), using
-**non-Tranco** discovery sources only.
+Live-verified **new** remote MCP servers (not in prior `remote-mcp-oauth-census`).
 
-**1,115 new servers** · **414 OAuth** · **268 OAuth root domains** · **338 open DCR**
+**2,335 new servers** · **1,070 OAuth** · **732 OAuth roots** · **864 open DCR** · **1,019 public**
 
-Generated 2026-08-01 12:26 UTC.
+Generated 2026-08-01 13:08 UTC.
 
 ## Totals
 
 | Metric | Count |
 | --- | ---: |
-| New verified MCP hosts (not in prior census) | **1,115** |
-| Tier A (initialize / PRM / JSON-RPC) | **1,011** |
-| Tier B (Bearer / probable) | **104** |
-| OAuth confirmed (PRM and/or AS metadata) | **414** |
-| OAuth root domains | **268** |
-| Open Dynamic Client Registration | **338** |
-| Public (no auth) | **538** |
-| Prior census hosts excluded | 29,140 |
-| Shopify storefront platform auth filtered | 735 |
+| New verified MCP hosts | **2,335** |
+| Tier A | **2,192** |
+| Tier B | **143** |
+| OAuth confirmed | **1,070** |
+| OAuth root domains | **732** |
+| Open DCR | **864** |
+| Public (no auth) | **1,019** |
+| Prior census excluded | 24,517 |
+| Shopify storefront filtered | 1,053 |
 
-## Discovery sources (not Tranco)
+## Discovery (not Tranco)
 
-| Source | Role |
-| --- | --- |
-| Official MCP Registry | Full cursor pagination (63,349 records → 10,895 remote URLs); live-probed unknown hosts |
-| Cisco Umbrella top-1M | Apex + `api.` `/mcp` spray on 150k domains absent from prior census |
-| Majestic Million | Apex spray on 100k majestic-only domains |
-| `mcp.<domain>` DNS census | 200k umbrella-unknown domains |
-| RFC 9728 PRM spray | `/.well-known/oauth-protected-resource` on 50k domains |
-| Smithery + awesome-mcp-servers | Catalog / README remote URL harvest |
+| Source | Servers |
+| --- | ---: |
+| serp_dorks | 1,096 |
+| mcp_registry | 852 |
+| dns_apex_spray | 342 |
+| catalogs_lists | 45 |
 
-Tranco was **not** used. Prior `remote-mcp-oauth-census` hosts (29,140) were excluded before probing.
+### SERP mass dorking
+- **3,037** search queries (verticals, SaaS brands, `inurl:/mcp`, `site:docs.`, OAuth/PRM dorks)
+- **2,899** queries returned MCP-shaped URLs
+- Engine: Browser Use V4 `/api/v4/search` (same path as prior census `serp_google.jsonl` — **no SerpAPI key was available in the environment**)
 
-## Verification bar (same as prior census)
+Also: MCP Registry, Cisco Umbrella, Majestic Million, `mcp.` DNS census, RFC 9728 PRM spray, Smithery/awesome lists, GitHub code search, urlscan.
 
+## Verification
 1. MCP `initialize` JSON-RPC (or MCP-shaped auth wall / JSON-RPC error)
-2. For OAuth: RFC 9728 PRM and/or RFC 8414/OIDC AS metadata
-3. Authorization/token endpoints must be public `https://`
-4. Shopify storefront-renderer platform endpoints filtered to `removed_platform_auth.csv`
+2. OAuth: RFC 9728 PRM and/or RFC 8414 AS metadata
+3. Shopify `storefront-renderer` platform endpoints filtered out
 
 ## Files
-
 | Path | Description |
 | --- | --- |
 | `data/remote_mcp_servers_new.csv` | All new verified servers |
 | `data/remote_mcp_oauth_new.csv` | OAuth subset |
-| `data/oauth_root_domains.txt` | Unique OAuth root domains |
-| `data/removed_platform_auth.csv` | Filtered Shopify storefront hits |
-| `data/stats.json` | Run stats |
+| `data/oauth_root_domains.txt` | OAuth root domains |
+| `data/removed_platform_auth.csv` | Filtered Shopify hits |
+| `data/stats.json` | Stats |
 | `index.html` | Searchable explorer |
-| `scripts/` | Probe tools (`mcp_probe`, `apex_spray`, `prm_spray`, `mcp_sub_spray`) |
+| `scripts/` | Probe + SERP tools |
 
-## By discovery source
-
-- **mcp_registry**: 851
-- **umbrella_majestic_apex**: 219
-- **smithery_awesome**: 29
-- **awesome_lists**: 16
-
-## Probe coverage
-
-- Umbrella apex: 149,994 domains → 4,501 raw hits
-- Majestic apex: 99,999 domains → 1,162 raw hits
-- `mcp.` DNS: 200,000 domains → 347 raw hits
-- Registry remotes probed: 3,003
-- Full quality re-probes: 3,126
-
-## License / use
-
-Research dataset. Auth posture changes; re-probe before relying on a row.
+## License
+Research dataset. Re-probe before relying on a row.

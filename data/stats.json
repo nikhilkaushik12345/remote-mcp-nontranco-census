@@ -1,48 +1,28 @@
 {
-  "generated_at_utc": "2026-08-01 12:26 UTC",
-  "methodology": {
-    "note": "Non-Tranco discovery. Exact prior census methodology: live MCP initialize + RFC 9728/8414 OAuth verification. Platform Shopify storefront filtered.",
-    "sources": [
-      "Official MCP Registry (63,349 records, 10,895 remote URLs) \u2014 not Tranco",
-      "Cisco Umbrella top-1M apex + api.<domain> /mcp spray (150k unknown domains)",
-      "Majestic Million apex spray (100k majestic-only domains)",
-      "mcp.<domain> DNS census (200k umbrella unknown)",
-      "RFC 9728 PRM well-known spray (50k)",
-      "Smithery remote catalog + awesome-mcp-servers lists"
-    ],
-    "excluded": "Prior remote-mcp-oauth-census hosts (29,140). Tranco not used. CDN/ad/noise hosts filtered. Shopify storefront platform auth filtered.",
-    "verification": "POST initialize JSON-RPC; PRM + AS metadata for OAuth; DCR via registration_endpoint"
-  },
-  "prior_census_hosts_excluded": 29140,
-  "new_servers": 1115,
-  "tier_A_verified": 1011,
-  "tier_B_probable": 104,
-  "oauth_confirmed": 414,
-  "oauth_root_domains": 268,
-  "open_dcr": 338,
-  "public_no_auth": 538,
-  "removed_shopify_storefront": 735,
+  "generated_at_utc": "2026-08-01 13:08 UTC",
+  "new_servers": 2335,
+  "tier_A_verified": 2192,
+  "tier_B_probable": 143,
+  "oauth_confirmed": 1070,
+  "oauth_root_domains": 732,
+  "open_dcr": 864,
+  "public_no_auth": 1019,
+  "removed_shopify_storefront": 1053,
+  "prior_census_hosts_excluded": 24517,
   "by_source": {
-    "mcp_registry": 851,
-    "umbrella_majestic_apex": 219,
-    "smithery_awesome": 29,
-    "awesome_lists": 16
+    "mcp_registry": 852,
+    "serp_dorks": 1096,
+    "dns_apex_spray": 342,
+    "catalogs_lists": 45
   },
   "by_auth": {
-    "oauth": 414,
-    "none_public": 538,
-    "unknown": 36,
-    "auth_required_scheme_unknown": 22,
-    "bearer_token": 105
+    "oauth": 1070,
+    "none_public": 1019,
+    "auth_required_scheme_unknown": 45,
+    "unknown": 54,
+    "bearer_token": 147
   },
-  "probe_coverage": {
-    "umbrella_apex_domains": 149994,
-    "umbrella_apex_hits_raw": 4501,
-    "majestic_apex_domains": 99999,
-    "majestic_apex_hits_raw": 1162,
-    "mcp_sub_domains": 200000,
-    "mcp_sub_hits_raw": 347,
-    "registry_remotes_probed": 3003,
-    "quality_full_probes": 3126
-  }
+  "serp_dork_queries": 3037,
+  "serp_queries_with_urls": 2899,
+  "note": "SERP via V4 search (no SerpAPI key). Non-Tranco. Live verified."
 }
