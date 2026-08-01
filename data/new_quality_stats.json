@@ -1,0 +1,16 @@
+{
+  "generated_at_utc": "2026-08-01 13:30 UTC",
+  "finaloauth_before": 8997,
+  "new_quality_oauth_roots": 57,
+  "finaloauth_after": 9054,
+  "with_dcr": 47,
+  "with_server_name": 13,
+  "host_rows": 61,
+  "sources": [
+    "brand mcp/api/docs probe",
+    "quality SERP dorks",
+    "filtered spray leftovers",
+    "re-scan all probes"
+  ],
+  "bar": "OAuth PRM and/or AS metadata; https auth/token; not in finaloauth; no shopify/platform infra roots"
+}
