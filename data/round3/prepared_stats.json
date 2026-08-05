@@ -1,0 +1,16 @@
+{
+  "excluded_roots": 11606,
+  "probe_candidates": 6880,
+  "probe_domains": 2364,
+  "probe_sources": {
+    "awesome_appcypher": 5,
+    "awesome_punkpeye": 4029,
+    "awesome_wong2": 8,
+    "official_mcp_registry": 2231,
+    "serp_dorks": 607
+  },
+  "skipped_excluded_probe_rows": 2381,
+  "spray_domains": 97282,
+  "spray_source": "majestic_million",
+  "spray_topn": 100000
+}

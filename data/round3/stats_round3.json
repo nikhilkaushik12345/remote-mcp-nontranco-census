@@ -1,0 +1,19 @@
+{
+  "excluded_finaloauth_roots_before": 9127,
+  "finaloauth_after": 9327,
+  "methodology": "official MCP registry + curated MCP lists + V4 SERP dorks + Majestic Million apex/mcp subdomain/RFC 9728 sprays; live MCP initialize and OAuth metadata; excludes finaloauth and prior verified hosts",
+  "new_mcp_error_hosts": 32,
+  "new_oauth_hosts": 224,
+  "new_oauth_roots": 200,
+  "new_open_hosts": 1181,
+  "new_verified_hosts": 1511,
+  "shopify_storefront_removed": 429,
+  "strict_verdict_counts": {
+    "auth_required": 1135,
+    "mcp_error": 32,
+    "mcp_maybe": 2077,
+    "no": 166,
+    "open": 1610,
+    "unreachable": 1
+  }
+}

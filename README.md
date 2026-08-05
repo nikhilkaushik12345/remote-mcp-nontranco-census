@@ -82,3 +82,21 @@ Additional non-Tranco discovery excluding all 9054 roots already in `finaloauth.
 | `finaloauth.txt` | Updated cumulative OAuth root list |
 
 Methodology unchanged: SERP mass dorks (V4 search), MCP registry, catalogs, `mcp.` DNS spray, apex `/mcp` spray, RFC 9728 PRM spray, live initialize + OAuth probe. No Tranco.
+
+---
+
+# Round 3 census (2026-08-05)
+
+Additional non-Tranco discovery excluding all 9127 roots present in `finaloauth.txt` at the start of the pass.
+
+| Metric | Count |
+| --- | ---: |
+| New verified MCP hosts | **1511** |
+| New open hosts | **1181** |
+| New OAuth hosts | **224** |
+| New JSON-RPC error hosts | **32** |
+| New OAuth roots | **200** |
+| Shopify storefront hits removed | **429** |
+| Cumulative OAuth roots | **9327** |
+
+Round-3 details and all generated files are in `data/round3/`. The strict final dataset is `data/round3/remote_mcp_servers_round3.csv`.

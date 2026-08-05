@@ -1,0 +1,11 @@
+{
+  "candidates": 6286,
+  "excluded_roots": 11606,
+  "filtered_duplicate_or_invalid": 7316,
+  "sources": {
+    "awesome_appcypher": 5,
+    "awesome_punkpeye": 4029,
+    "awesome_wong2": 8,
+    "official_mcp_registry": 2244
+  }
+}
